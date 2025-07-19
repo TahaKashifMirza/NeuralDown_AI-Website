@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500&display=swap');
+
+:root {
+  --neon-cyan: #00fff7;
+  --neon-pink: #ff2d95;
+  --deep-black: #0a0a0a;
+  --white-transparent: rgba(255, 255, 255, 0.05);
+  --white-border: rgba(255, 255, 255, 0.1);
+  --text-white: #ffffff;
+  --text-gray-light: #d1d5db;
+}
+
+.usecasesmain-section {
+  background-color: var(--deep-black);
+  color: var(--text-white);
+  padding: 6rem 1.5rem;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+}
+
+.usecasesmain-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #00e0dd; /* slightly less intense cyan */
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow:
+    0 0 6px rgba(0, 255, 247, 0.6),
+    0 0 14px rgba(0, 255, 247, 0.4);
+  user-select: none;
+}
+
+.usecasesmain-subtitle {
+  text-align: center;
+  color: #b0b0b0;
+  font-size: 1.1rem;
+  margin-top: -0.5rem;
+  margin-bottom: 3.5rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.usecasesmain-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0 1rem;
+}
+
+/* Cards */
+.usecasesmain-card {
+  background-color: var(--white-transparent);
+  border: 1px solid var(--white-border);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow:
+    0 8px 20px rgba(0, 255, 255, 0.15),
+    0 0 12px rgba(255, 45, 149, 0.08);
+  backdrop-filter: blur(14px);
+  transition: all 0.35s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  user-select: none;
+  position: relative;
+}
+
+.usecasesmain-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 10px 30px rgba(0, 255, 255, 0.4),
+    0 0 30px rgba(255, 45, 149, 0.4);
+  border-color: var(--neon-cyan);
+}
+
+/* Icon wrapper */
+.usecasesmain-icon-wrapper {
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+/* Icons */
+.usecasesmain-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 6px);
+  transition: filter 0.3s ease;
+}
+
+.usecasesmain-icon-cyan {
+  color: var(--neon-cyan);
+  filter: drop-shadow(0 0 10px var(--neon-cyan));
+}
+
+.usecasesmain-icon-pink {
+  color: var(--neon-pink);
+  filter: drop-shadow(0 0 10px var(--neon-pink));
+}
+
+/* Card title */
+.usecasesmain-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--neon-pink);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Card description */
+.usecasesmain-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-gray-light);
+  line-height: 1.6;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Tablet - 2 columns */
+@media (min-width: 600px) {
+  .usecasesmain-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .usecasesmain-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Desktop - 3 columns */
+@media (min-width: 1024px) {
+  .usecasesmain-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .usecasesmain-title {
+    font-size: 4rem;
+  }
+}
+
+/* Large screens - 4 columns */
+@media (min-width: 1440px) {
+  .usecasesmain-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .usecasesmain-section {
+    padding: 4rem 1rem;
+  }
+
+  .usecasesmain-title {
+    font-size: 2rem;
+  }
+
+  .usecasesmain-subtitle {
+    font-size: 1rem;
+  }
+
+  .usecasesmain-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .usecasesmain-card-title {
+    font-size: 1.1rem;
+  }
+
+  .usecasesmain-card-desc {
+    font-size: 0.9rem;
+  }
+
+  .usecasesmain-icon {
+    font-size: 2.5rem;
+  }
+}

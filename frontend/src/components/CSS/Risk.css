@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+:root {
+  --risk-red-dark: #b91c1c;
+  --risk-red: #ef4444;
+  --risk-red-light: #f87171;
+  --bg-dark: #0a0a0a;
+  --bg-deep: #1a1a1a;
+  --bg-glow: radial-gradient(circle at top left, #1f1f1f 0%, #0f0f0f 100%);
+  --white-05: rgba(255, 255, 255, 0.05);
+  --white-border: rgba(255, 255, 255, 0.12);
+  --text-light: #e5e7eb;
+  --text-muted: #9ca3af;
+  --neon-shadow: 0 0 10px var(--risk-red);
+  --card-glow: 0 0 12px rgba(255, 80, 80, 0.2);
+  --font-futuristic: 'Orbitron', sans-serif;
+}
+
+/* Section */
+.riskmain-section {
+  background: var(--bg-glow);
+  padding: 6rem 1.5rem;
+  min-height: 100vh;
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.riskmain-title {
+  font-family: var(--font-futuristic);
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: var(--risk-red);
+  margin-bottom: 3.5rem;
+  text-align: center;
+  text-shadow: var(--neon-shadow);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInTop 1s forwards;
+}
+
+/* Grid */
+.riskmain-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.5rem;
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Card */
+.riskmain-card {
+  background-color: var(--white-05);
+  border: 1px solid var(--white-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(16px);
+  box-shadow: var(--card-glow);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards;
+  position: relative;
+}
+
+.riskmain-card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 20px var(--risk-red),
+    0 10px 25px rgba(255, 0, 0, 0.4);
+  z-index: 10;
+}
+
+/* Icon */
+.riskmain-icon-wrapper {
+  margin-bottom: 1.2rem;
+}
+
+.riskmain-icon {
+  font-size: 2.5rem;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.riskmain-icon--red {
+  color: var(--risk-red-dark);
+  filter: drop-shadow(0 0 4px var(--risk-red));
+}
+
+.riskmain-icon--lightred {
+  color: var(--risk-red-light);
+  filter: drop-shadow(0 0 5px var(--risk-red));
+}
+
+/* Titles */
+.riskmain-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--risk-red-light);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+/* Description */
+.riskmain-card-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Quote */
+.riskmain-quote {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+  max-width: 800px;
+  color: var(--text-muted);
+  opacity: 0.85;
+  user-select: none;
+  padding-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Layout */
+
+/* Tablets - 2 columns */
+@media (min-width: 640px) {
+  .riskmain-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .riskmain-title {
+    font-size: 3.75rem;
+  }
+}
+
+/* Desktop - 3 columns */
+@media (min-width: 1024px) {
+  .riskmain-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .riskmain-title {
+    font-size: 4rem;
+  }
+
+  .riskmain-card {
+    padding: 2.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .riskmain-title {
+    font-size: 2rem;
+  }
+
+  .riskmain-card {
+    padding: 1.5rem;
+  }
+
+  .riskmain-card-title {
+    font-size: 1.2rem;
+  }
+
+  .riskmain-card-desc {
+    font-size: 0.9rem;
+  }
+
+  .riskmain-quote{
+     font-size: 0.9rem;
+  }
+
+  .riskmain-icon {
+    font-size: 2.2rem;
+  }
+}

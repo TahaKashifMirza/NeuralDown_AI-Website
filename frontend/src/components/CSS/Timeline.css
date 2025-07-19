@@ -1,0 +1,114 @@
+:root {
+  --neon-cyan: #00ffe7;
+  --neon-pink: #ff008c;
+  --black: #0a0a0a;
+  --gray: #1a1a1a;
+  --text-gray: #c7c7c7;
+  --shadow-depth: rgba(0, 255, 255, 0.2);
+}
+
+.future-section {
+  background: radial-gradient(circle at top, #111 0%, #000 100%);
+  color: #fff;
+  padding: 6rem 2rem;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.future-title {
+  font-size: 3rem;
+  color: var(--neon-cyan);
+  text-align: center;
+  margin-bottom: 5rem;
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+}
+
+.future-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  z-index: 10;
+}
+
+.future-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 5px 25px rgba(0, 255, 255, 0.1),
+    0 0 15px rgba(255, 0, 140, 0.05);
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.future-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow:
+    0 15px 35px rgba(0, 255, 255, 0.3),
+    0 0 30px rgba(255, 0, 140, 0.2);
+  border-color: var(--neon-cyan);
+}
+
+.future-icon-wrapper {
+  margin-bottom: 1rem;
+  transform: translateZ(20px);
+}
+
+.future-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 6px);
+}
+
+.cyan {
+  color: var(--neon-cyan);
+  filter: drop-shadow(0 0 10px var(--neon-cyan));
+}
+
+.pink {
+  color: var(--neon-pink);
+  filter: drop-shadow(0 0 10px var(--neon-pink));
+}
+
+.future-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--neon-pink);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 6px var(--neon-pink);
+}
+
+.future-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+.future-quote {
+  text-align: center;
+  font-style: italic;
+  margin-top: 5rem;
+  font-size: 1.1rem;
+  color: #aaa;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .future-title {
+    font-size: 2rem;
+  }
+  .future-card-title {
+    font-size: 1.1rem;
+  }
+  .future-card-desc {
+    font-size: 0.9rem;
+  }
+}

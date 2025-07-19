@@ -1,0 +1,236 @@
+/* Fonts & Reset */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+.footermain-footer {
+  position: relative;
+  background: #0d0d0d;
+  padding: 80px 20px 40px;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  z-index: 0;
+}
+
+.footermain-glass {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  z-index: 2;
+  position: relative;
+  gap: 40px;
+}
+
+.footermain-section {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footermain-logo {
+  font-size: 28px;
+  color: #00ffe7;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  animation: footermain-flicker 4s infinite;
+}
+
+.footermain-tagline {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footermain-heading {
+  color: #ff00aa;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.footermain-links-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footermain-link {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footermain-link:hover {
+  color: #00ffe7;
+  transform: translateX(4px);
+  text-shadow: 0 0 6px #00ffe7;
+}
+
+.footermain-icon {
+  margin-right: 8px;
+  color: #00ffe7;
+}
+
+.footermain-contact-item {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footermain-social-icons {
+  display: flex;
+  gap: 16px;
+  font-size: 22px;
+}
+
+.footermain-social-link {
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footermain-social-link:hover {
+  transform: scale(1.2);
+  color: #ff00aa;
+  text-shadow: 0 0 6px #ff00aa;
+}
+
+.footermain-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12px;
+  color: #888;
+  z-index: 2;
+  position: relative;
+}
+
+.footermain-bottom-text {
+  margin: 4px 0;
+}
+
+.footermain-highlight {
+  color: #00ffe7;
+  font-weight: bold;
+}
+
+/* Background Glows */
+.footermain-glow-1,
+.footermain-glow-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,255,231,0.3), transparent);
+  filter: blur(120px);
+  z-index: 0;
+  animation: footermain-pulse 6s infinite alternate;
+}
+
+.footermain-glow-1 {
+  top: 0;
+  left: -100px;
+}
+
+.footermain-glow-2 {
+  bottom: 0;
+  right: -100px;
+}
+
+/* Animations */
+@keyframes footermain-flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.8; }
+  60% { opacity: 0.6; }
+  75% { opacity: 0.9; }
+}
+
+@keyframes footermain-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* ========================= */
+/*      RESPONSIVENESS      */
+/* ========================= */
+
+/* Tablets and below (stack vertical) */
+@media screen and (max-width: 1024px) {
+  .footermain-glass {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  .footermain-section {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footermain-social-icons {
+    justify-content: center;
+  }
+
+  .footermain-logo {
+    font-size: 24px;
+  }
+
+  .footermain-heading {
+    font-size: 16px;
+  }
+
+  .footermain-tagline,
+  .footermain-link,
+  .footermain-contact-item {
+    font-size: 13.5px;
+  }
+
+  .footermain-bottom {
+    font-size: 11px;
+    margin-top: 30px;
+  }
+}
+
+/* Phones */
+@media screen and (max-width: 600px) {
+  .footermain-footer {
+    padding: 60px 10px 20px;
+  }
+
+  .footermain-logo {
+    font-size: 22px;
+  }
+
+  .footermain-heading {
+    font-size: 15px;
+  }
+
+  .footermain-tagline,
+  .footermain-link,
+  .footermain-contact-item {
+    font-size: 12.5px;
+  }
+
+  .footermain-social-icons {
+    font-size: 20px;
+    gap: 14px;
+  }
+
+  .footermain-bottom {
+    font-size: 10.5px;
+  }
+}
