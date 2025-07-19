@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 import './CSS/Navbar.css';
